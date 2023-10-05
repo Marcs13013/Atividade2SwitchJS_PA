@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="yellow"><center>
+    
+<font size="9" id="retorno"></font><br> <br><br> <font size="9"> A ordem 
+    decrescente das notas desse aluno é: </font> <br>
+<font size="9" id="Num"></font>
+
+<p id="retorno"></p><br>
+<p id="Num"></p>
+
+<script>
+
+
+let NomeAluno = prompt("Digite o nome do aluno");
+let Nota1 = Number(prompt("Digite a primeira nota desse aluno"));
+let Nota2 = Number(prompt("Digite a segunda nota desse aluno"));
+let Nota3 = Number(prompt("Digite a terceira nota desse aluno"));
+let MediaNotas = Nota1 + Nota2 + Nota3 / 3 ;
+let retorno = '';
+let Num = [Nota1, Nota2,Nota3];
+
+
+if(MediaNotas >= 6) {
+    retorno = "A média do aluno" + " " + NomeAluno +  " " +  "</br>" +"é " + MediaNotas + " .O aluno foi aprovado";
+} else if(MediaNotas < 6) {
+    retorno = "A média do aluno" + " " + NomeAluno + " " + "</br>" + "é " + MediaNotas + " .O aluno foi reprovado";
+}
+
+/*switch (Number) {
+    case Nota1 > Nota2 && Nota2 > Nota3:
+      Num =   String (Nota1) + String(Nota2) + String(Nota3) 
+        break;
+        case Nota1 > Nota2 && Nota3 > Nota2:
+      Num =   String (Nota1) + String(Nota3) + String(Nota2)
+      break; 
+    default:
+        break;
+}*/
+
+function compararDecrescente(a, b) {
+    return b - a;
+    
+}
+
+Num.sort(compararDecrescente);
+console.log(Num)
+
+document.getElementById("retorno").innerHTML = retorno;
+document.getElementById("Num").innerHTML = Num;
+
+
+
+</script>
+
+</center>
+</body>
+</html>

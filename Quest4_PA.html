@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="yellow"><center>
+    
+<font size="9" id="retorno"></font>
+<p id="retorno"></p>
+
+<script>
+
+let NomeAluno = prompt("Digite o nome do aluno");
+let Nota1 = Number(prompt("Digite a primeira nota desse aluno"));
+let Nota2 = Number(prompt("Digite a segunda nota desse aluno"));
+let Nota3 = Number(prompt("Digite a terceiro nota desse aluno"));
+let MediaNotas = Nota1 + Nota2 + Nota3 / 3 ;
+retorno = '';
+
+if(MediaNotas >= 6) {
+    retorno = "A média do aluno" + " " + NomeAluno +  " " +  "</br>" +"é " + MediaNotas + " ,O aluno foi aprovado";
+} else if(MediaNotas < 6) {
+    retorno = "A média do aluno" + " " + NomeAluno + " " + "</br>" + "é " + MediaNotas + " ,O aluno foi reprovado";
+}
+
+document.getElementById("retorno").innerHTML = retorno;
+
+
+
+</script>
+
+</center>
+</body>
+</html>

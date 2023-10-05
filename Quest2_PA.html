@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 2</title>
+</head>
+
+<body bgcolor="yellow">
+    <center>
+
+        <font size="9" id="retorno"></font>
+        <div id="retorno"></div>
+
+
+
+        <script>
+            let nome1 = prompt("Digite o nome da primeira pessoa");
+            let p1 = Number(prompt("Digite o peso da primeira pessoa"));
+            let nome2 = prompt("Digite o nome da segunda pessoa");
+            let p2 = Number(prompt("Digite o peso da segunda pessoa"));
+            let nome3 = prompt("Digite o nome da terceira pessoa");
+            let p3 = Number(prompt("Digite o peso da terceira pessoa"));
+
+            var retorno = '';
+            /*if (p1 > p2 && p2> p3){
+                retorno = nome1 + " pesa " + p1 + "kg e é mais pesado que " +  nome2 + " que pesa " + p2 + 
+                "kg </br>" + "e " + nome2 + " que pesa " + p2 + "kg é mais pesado que " + 
+                nome3 + " que pesa " + p3 + "kg";
+            } else if (p1 > p3 && p3> p2){
+                retorno = nome1 + " pesa " + p1 + "kg e é mais pesado que " +  nome3 + " que pesa " + p3 + 
+                "kg </br>" + "e " + nome3 + " que pesa " + p3 + "kg é mais pesado que " + 
+                nome2 + " que pesa " + p2 + "kg";
+            } else if (p2 > p1 && p1> p3){
+                retorno = nome2 + " pesa " + p2 + "kg e é mais pesado que " +  nome1 + " que pesa " + p1 + 
+                "kg </br>" + "e " + nome1 + " que pesa " + p1 + "kg é mais pesado que " + 
+                nome3 + " que pesa " + p3 + "kg";
+            }else if (p2 > p3 && p3> p1){
+                retorno = nome2 + " pesa " + p2 + "kg e é mais pesado que " +  nome3 + " que pesa " + p3 + 
+                "kg </br>" + "e " + nome3 + " que pesa " + p3 + "kg é mais pesado que " + 
+                nome1 + " que pesa " + p1 + "kg";
+            } else if (p3 > p1 && p1> p2){
+                retorno = nome3 + " pesa " + p3 + "kg e é mais pesado que " +  nome1 + " que pesa " + p1 + 
+                "kg </br>" + "e " + nome1 + " que pesa " + p1 + "kg é mais pesado que " + 
+                nome2 + " que pesa " + p2 + "kg";
+            }else if (p3 > p2 && p2> p1){
+                retorno = nome3 + " pesa " + p3 + "kg e é mais pesado que " +  nome2 + " que pesa " + p2 + 
+                "kg </br>" + "e " + nome2 + " que pesa " + p2 + "kg é mais pesado que " + 
+                nome1 + " que pesa " + p1 + "kg" ;
+            }   */
+
+
+            switch (true) {
+                case p1 >= p2 && p2 >= p3:
+                    retorno = nome1 + " pesa " + p1 + "kg e é mais pesado que " + nome2 + " que pesa " + p2 +
+                        "kg </br>" + "e " + nome2 + " que pesa " + p2 + "kg é mais pesado que " +
+                        nome3 + " que pesa " + p3 + "kg" + "</br>" + "</br>" + "3º peso: " + p1 + "kg" +
+                        "</br>" + "2º peso: " + p2 + "kg" + "</br>" + "1º peso: " + p3 + "kg" + "</br>";
+                    break;
+                case p1 >= p3 && p3 >= p2:
+                    retorno = nome1 + " pesa " + p1 + "kg e é mais pesado que " + nome3 + " que pesa " + p3 +
+                        "kg </br>" + "e " + nome3 + " que pesa " + p3 + "kg é mais pesado que " +
+                        nome2 + " que pesa " + p2 + "kg" + "</br>" + "</br>" + "3º peso: " + p1 + "kg" +
+                        "</br>" + "2º peso: " + p3 + "kg" + "</br>" + "1º peso: " + p2 + "kg" + "</br>";
+                    break;
+                case p2 >= p1 && p1 >= p3:
+                    retorno = nome2 + " pesa " + p2 + "kg e é mais pesado que " + nome1 + " que pesa " + p1 +
+                        "kg </br>" + "e " + nome1 + " que pesa " + p1 + "kg é mais pesado que " +
+                        nome3 + " que pesa " + p3 + "kg" + "</br>" + "</br>" + "3º peso: " + p2 + "kg" +
+                        "</br>" + "2º peso: " + p1 + "kg" + "</br>" + "1º peso: " + p3 + "kg" + "</br>";
+                    break;
+                case p2 >= p3 && p3 >= p1:
+                    retorno = nome2 + " pesa " + p2 + "kg e é mais pesado que " + nome3 + " que pesa " + p3 +
+                        "kg </br>" + "e " + nome3 + " que pesa " + p3 + "kg é mais pesado que " +
+                        nome1 + " que pesa " + p1 + "kg" + "</br>" + "</br>" + "3º peso: " + p2 + "kg" +
+                        "</br>" + "2º peso: " + p3 + "kg" + "</br>" + "1º peso: " + p1 + "kg" + "</br>";
+                    break;
+                case p3 >= p2 && p2 >= p1:
+                    retorno = nome3 + " pesa " + p3 + "kg e é mais pesado que " + nome2 + " que pesa " + p2 +
+                        "kg </br>" + "e " + nome2 + " que pesa " + p2 + "kg é mais pesado que " +
+                        nome1 + " que pesa " + p1 + "kg" + "</br>" + "</br>" + "3º peso: " + p3 + "kg" +
+                        "</br>" + "2º peso: " + p2 + "kg" + "</br>" + "1º peso: " + p1 + "kg" + "</br>";
+                    break;
+                case p3 >= p1 && p1 >= p2:
+                    retorno = nome3 + " pesa " + p3 + "kg e é mais pesado que " + nome1 + " que pesa " + p1 +
+                        "kg </br>" + "e " + nome1 + " que pesa " + p1 + "kg é mais pesado que " +
+                        nome2 + " que pesa " + p2 + "kg" + "</br>" + "</br>" + "3º peso: " + p3 + "kg" +
+                        "</br>" + "2º peso: " + p1 + "kg" + "</br>" + "1º peso: " + p2 + "kg" + "</br>";
+                    break;
+
+                default:
+                    retorno = "Nomes e Pesos Desconhecidos";
+                    break;
+            }
+
+            document.getElementById("retorno").innerHTML = retorno;
+
+
+        </script>
+
+    </center>
+</body>
+
+</html>
