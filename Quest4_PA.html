@@ -1,36 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body bgcolor="yellow"><center>
-    
-<font size="9" id="retorno"></font>
-<p id="retorno"></p>
 
-<script>
+<body bgcolor="yellow">
+    <center>
 
-let NomeAluno = prompt("Digite o nome do aluno");
-let Nota1 = Number(prompt("Digite a primeira nota desse aluno"));
-let Nota2 = Number(prompt("Digite a segunda nota desse aluno"));
-let Nota3 = Number(prompt("Digite a terceiro nota desse aluno"));
-let MediaNotas = Nota1 + Nota2 + Nota3 / 3 ;
-retorno = '';
+        <font size="9" id="retorno"></font>
 
-if(MediaNotas >= 6) {
-    retorno = "A média do aluno" + " " + NomeAluno +  " " +  "</br>" +"é " + MediaNotas + " ,O aluno foi aprovado";
-} else if(MediaNotas < 6) {
-    retorno = "A média do aluno" + " " + NomeAluno + " " + "</br>" + "é " + MediaNotas + " ,O aluno foi reprovado";
-}
+        <script>
 
-document.getElementById("retorno").innerHTML = retorno;
+            let NomeFuncionario = prompt("Digite o nome do funcionário");
+            let Vendas = prompt("Digite o número de produtos vendidos por esse funcionário")
+            let comissao = 0
+
+            switch (true) {
+                case Vendas <= 250:
+                    comissao = Vendas
+                    if (Vendas == 1) {
+                        retorno = "O funcionário " + NomeFuncionario + " fez uma venda de " + Vendas + " produto. " +
+                            " </br> A comissão que o funcionário irá receber é de R$ 1,00 por produto." +
+                            "<br> A comissão que ele receberá por suas vendas é de: " + comissao;
+                    } else {
+                        retorno = "O funcionário " + NomeFuncionario + " fez uma venda de " + Vendas +" produtos. " 
+                             + " </br> A comissão que o funcionário irá receber é de R$ 1,00 por produto." +
+                            "<br> A comissão que ele receberá por suas vendas é de: " + "R$ " + comissao + ",00";
+
+                    }
+                    break;
+                case Vendas > 250:
+                    comissao = Vendas * 1.5
+                    retorno = "O funcionário " + NomeFuncionario + " fez uma venda de " + Vendas +" produtos. " 
+                             + " </br> A comissão que o funcionário irá receber é de R$ 1,50 por produto." +
+                            "<br> A comissão que ele receberá por suas vendas é de: " + "R$ " + comissao + ",00";                    break;
+                case Vendas > 500:
+                    comissao = Vendas * 2
+
+                    retorno = "O funcionário " + NomeFuncionario + " fez uma venda de " + Vendas +" produtos. " 
+                             + " </br> A comissão que o funcionário irá receber é de R$ 2,00 por produto." +
+                            "<br> A comissão que ele receberá por suas vendas é de: " + "R$ " + comissao + ",00";
+                default:
+                    retorno = "O número de vendas não está escrito corretamente"
+                    break;
+            }
+
+
+            document.getElementById("retorno").innerHTML = retorno;
 
 
 
-</script>
+        </script>
 
-</center>
+    </center>
 </body>
+
 </html>
